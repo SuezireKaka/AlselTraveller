@@ -52,7 +52,7 @@ public class AlselTravellerApplication {
 		MakerDiscordID makerDiscordIDEntity = context.getBean(MakerDiscordID.class);
 		String makerDiscordID = makerDiscordIDEntity.getMakerDiscordID();
 
-		jda = JDABuilder.createDefault(discordBotToken).setActivity(Activity.playing("자바로 동작"))
+		jda = JDABuilder.createDefault(discordBotToken).setActivity(Activity.playing("아르셰르 탐험"))
 				.enableIntents(GatewayIntent.MESSAGE_CONTENT)
 				.addEventListeners(
 						new MessageListener(makerDiscordID))
