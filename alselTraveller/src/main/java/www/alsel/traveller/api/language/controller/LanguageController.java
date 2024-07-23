@@ -13,13 +13,13 @@ import www.alsel.traveller.api.language.model.LanguageVO;
 import www.alsel.traveller.api.language.service.LanguageService;
 
 @RestController		//Container에 담기도록 지정
-@RequestMapping("/alsel")
+@RequestMapping("/language")
 public class LanguageController {
 	@Autowired
 	private LanguageService languageService;
 	
-	// /alsel/anonymous/language
-	@GetMapping("/anonymous/language")
+	// /language/anonymous
+	@GetMapping("/anonymous")
 	public ResponseEntity<List<LanguageVO>> listAllLanguages() {
 		List<LanguageVO> result = languageService.listAllLanguages();
 		return new ResponseEntity<>(result, HttpStatus.OK);
