@@ -1,11 +1,8 @@
 package www.alsel.traveller.api.language.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import www.alsel.traveller.api.language.model.grammar.GrammarCategoryVO;
+import www.alsel.traveller.api.language.model.grammar.GrammarVO;
 import www.alsel.traveller.api.language.model.phonology.PhonologyVO;
 import www.alsel.traveller.api.language.model.vocabulary.VocabularyVO;
 
@@ -17,7 +14,5 @@ public class LanguageVO {
 	
 	private PhonologyVO phonology;
 	private VocabularyVO vocabulary;
-	private List<GrammarCategoryVO> grammarList = new ArrayList<>();
-	
-	
+	private GrammarVO grammar;
 }

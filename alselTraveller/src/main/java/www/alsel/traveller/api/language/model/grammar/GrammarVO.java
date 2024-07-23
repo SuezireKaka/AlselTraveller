@@ -1,5 +1,13 @@
 package www.alsel.traveller.api.language.model.grammar;
 
-public class GrammarVO {
+import java.util.ArrayList;
+import java.util.List;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+public class GrammarVO {
+	private List<GrammarCategoryVO> categoryList = new ArrayList<>();
 }
