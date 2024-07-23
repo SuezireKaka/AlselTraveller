@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class LanguageVO {
-	public String name;
-	public List<WordVO> wordList;
+	private String name;
+	private List<WordVO> wordList;
 }
