@@ -1,10 +1,10 @@
-package www.dismemo.bot;
+package www.alsel.traveller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiscordMemoBotApplicationTests {
+class AlselTravellerApplicationTests {
 
 	@Test
 	void contextLoads() {
