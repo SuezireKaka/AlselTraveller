@@ -20,8 +20,12 @@ public abstract class ApiCommand implements Command {
 	public static final String INT_VARIABLE = API_SUFFIX + "%d";
 	public static final String STR_VARIABLE = API_SUFFIX + "%s";
 	
-	public static final String MEMO = API_SUFFIX + "memo";
+	public static final String CHARACTER = API_SUFFIX + "character";
+	public static final String LANGUAGE = API_SUFFIX + "language";
 	public static final String PARTY = API_SUFFIX + "party";
+	
+	public static final String ANONYMOUS = API_SUFFIX + "anonymous";
+	public static final String ANONYMOUS_MATCHER = "/*" + ANONYMOUS + "/**";
 	
 	public static final String LIST_ALL = API_SUFFIX + "listAll";
 	public static final String PATH_PAGE = API_SUFFIX + PATH_REFER_OPEN + "page" + PATH_REFER_CLOSE;

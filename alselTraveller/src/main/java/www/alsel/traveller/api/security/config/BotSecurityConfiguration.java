@@ -21,6 +21,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
+import www.alsel.traveller.bot.command.ApiCommand;
 import www.alsel.traveller.sys.context.ApiRequestInfo;
 
 @Configuration
@@ -50,8 +51,10 @@ public class BotSecurityConfiguration implements WebMvcConfigurer {
 		http.httpBasic(HttpBasicConfigurer::disable)
 				.csrf(CsrfConfigurer::disable)
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/*/anonymous/**").permitAll())
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth ->
+                		auth.requestMatchers(ApiCommand.ANONYMOUS_MATCHER).permitAll())
+                .authorizeHttpRequests(auth ->
+                		auth.anyRequest().authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .exceptionHandling(ex -> ex.accessDeniedHandler(denyHandler))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

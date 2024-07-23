@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import www.alsel.traveller.api.character.model.CharacterVO;
 import www.alsel.traveller.api.character.service.CharacterService;
+import www.alsel.traveller.bot.command.ApiCommand;
 
 @RestController		//Container에 담기도록 지정
-@RequestMapping("/character")
+@RequestMapping(ApiCommand.CHARACTER)
 public class CharacterController {
 	@Autowired
 	private CharacterService kittogishService;
 	
 	// /character/anonymous
-	@GetMapping("/anonymous")
+	@GetMapping(ApiCommand.ANONYMOUS)
 	public ResponseEntity<List<CharacterVO>> listAllCharacters() {
 		List<CharacterVO> result = kittogishService.listAllCharacters();
 		return new ResponseEntity<>(result, HttpStatus.OK);

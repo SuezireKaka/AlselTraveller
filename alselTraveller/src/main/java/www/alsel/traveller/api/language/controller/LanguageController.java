@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import www.alsel.traveller.api.language.model.LanguageVO;
 import www.alsel.traveller.api.language.service.LanguageService;
+import www.alsel.traveller.bot.command.ApiCommand;
 
 @RestController		//Container에 담기도록 지정
-@RequestMapping("/language")
+@RequestMapping(ApiCommand.LANGUAGE)
 public class LanguageController {
 	@Autowired
 	private LanguageService languageService;
 	
 	// /language/anonymous
-	@GetMapping("/anonymous")
+	@GetMapping(ApiCommand.ANONYMOUS)
 	public ResponseEntity<List<LanguageVO>> listAllLanguages() {
 		List<LanguageVO> result = languageService.listAllLanguages();
 		return new ResponseEntity<>(result, HttpStatus.OK);
