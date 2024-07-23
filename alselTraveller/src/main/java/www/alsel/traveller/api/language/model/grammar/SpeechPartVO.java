@@ -1,4 +1,4 @@
-package www.alsel.traveller.api.language.model;
+package www.alsel.traveller.api.language.model.grammar;
 
 import java.util.List;
 

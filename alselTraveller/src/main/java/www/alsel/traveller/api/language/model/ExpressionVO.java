@@ -12,6 +12,10 @@ public class ExpressionVO {
 	private String expression;
 	
 	public boolean isPhonologicallySafe() {
-		return language.isPhonologicallySafe(expression);
+		return language.getPhonology().isPhonologicallySafe(expression);
+	}
+	
+	public boolean isCorrectWord() {
+		return language.getVocabulary().isCorrectWord(expression);
 	}
 }
