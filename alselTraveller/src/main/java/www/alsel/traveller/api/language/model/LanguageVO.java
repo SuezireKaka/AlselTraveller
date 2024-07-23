@@ -10,4 +10,8 @@ import lombok.NoArgsConstructor;
 public class LanguageVO {
 	private String name;
 	private List<WordVO> wordList;
+	
+	public boolean isSafeExpression(String expression) {
+		return false;
+	}
 }
