@@ -9,5 +9,5 @@ import www.alsel.traveller.api.language.model.ExpressionDTO;
 @Getter
 @NoArgsConstructor
 public class WordVO extends ExpressionDTO {
-	private List<MeaningVO> meaningMap;
+	private List<MeaningVO> meaningList;
 }

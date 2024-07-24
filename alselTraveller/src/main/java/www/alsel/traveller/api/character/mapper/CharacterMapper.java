@@ -8,6 +8,6 @@ import www.alsel.traveller.api.character.model.CharacterVO;
 
 @Mapper
 public interface CharacterMapper {
-	List<CharacterVO> listAllCharacters();
+	public List<CharacterVO> listAllCharacters();
 
 }

@@ -9,7 +9,7 @@ import www.alsel.traveller.api.language.model.grammar.SpeechPartVO;
 @Getter
 @NoArgsConstructor
 public class MeaningVO extends Entity {
-	private SpeechPartVO speechPart;
 	private String meaning;
+	private SpeechPartVO speechPart;
 	private SpeciesVO origin;
 }

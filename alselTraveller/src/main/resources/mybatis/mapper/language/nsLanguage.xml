@@ -7,18 +7,18 @@
 	<resultMap id="rmLanguageVO" extends="nsEntity.rmEntity"
 			type="www.alsel.traveller.api.language.model.LanguageVO">
 		<result property="name" column="name" />
-		<result property="intro" column="intro" />
+		<result property="introduce" column="intro" />
 		<association property="phonology" columnPrefix="phon_"
 			resultMap="rmPhonologyMO"/>
-		<!--<association property="vocabulary" columnPrefix="voc_"
+		<association property="vocabulary" columnPrefix="voca_"
 			resultMap="rmVocabularyMO"/>
 		<association property="grammar" columnPrefix="gram_"
-			resultMap="rmGrammarMO"/>-->
+			resultMap="rmGrammarMO"/>
 	</resultMap>
 	
 	<resultMap id="rmPhonologyMO"
 			type="www.alsel.traveller.api.language.model.phonology.PhonologyMO">
-		<collection property="phonemeList" columnPrefix="me_"
+		<collection property="phonemeList" columnPrefix="phon_"
 			resultMap="rmPhonemeVO">
 		</collection>
 	</resultMap>
@@ -37,6 +37,29 @@
 			type="www.alsel.traveller.api.language.model.phonology.PhonologicalPropertyVO">
 		<result property="contraction" column="contr" />
 		<result property="expression" column="expr" />
+	</resultMap>
+	
+	<resultMap id="rmVocabularyMO"
+			type="www.alsel.traveller.api.language.model.vocabulary.VocabularyMO">
+		<collection property="wordList" columnPrefix="word_"
+			resultMap="rmWordVO">
+		</collection>
+	</resultMap>
+	
+	<resultMap id="rmWordVO"
+			type="www.alsel.traveller.api.language.model.vocabulary.WordVO">
+		<collection property="meaningList" columnPrefix="mean_"
+			resultMap="rmMeaningVO">
+		</collection>
+	</resultMap>
+	
+	<resultMap id="rmMeaningVO"
+			type="www.alsel.traveller.api.language.model.vocabulary.MeaningVO">
+		<result property="meaning" column="meaning" />
+		<association property="speechPart" columnPrefix="sp_"
+			resultMap="rmSpeechPartVO"/>
+		<association property="origin" columnPrefix="or_"
+			resultMap="nsCharacter.rmSpeciesVO"/>
 	</resultMap>
 	
 	
