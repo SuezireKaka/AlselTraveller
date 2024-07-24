@@ -1,4 +1,5 @@
 create table t_language (
-	name	varchar(32) primary key,
+	id		char(4) primary key,
+	name	varchar(32),
 	intro	varchar(1000)
 );
