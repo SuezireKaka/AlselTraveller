@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class GrammarVO {
+public class GrammarMO {
 	private List<GrammarCategoryVO> categoryList = new ArrayList<>();
 }

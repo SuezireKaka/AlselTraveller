@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExpressionVO {
+public class ExpressionDTO {
 	private LanguageVO language;
 	private String expression;
 	

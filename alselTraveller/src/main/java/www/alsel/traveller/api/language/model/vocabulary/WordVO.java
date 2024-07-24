@@ -5,11 +5,11 @@ import java.util.Map;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import www.alsel.traveller.api.language.model.ExpressionVO;
+import www.alsel.traveller.api.language.model.ExpressionDTO;
 import www.alsel.traveller.api.language.model.grammar.SpeechPartVO;
 
 @Getter
 @NoArgsConstructor
-public class WordVO extends ExpressionVO {
+public class WordVO extends ExpressionDTO {
 	private Map<SpeechPartVO, List<MeaningVO>> meaningMap;
 }
