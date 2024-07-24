@@ -15,7 +15,7 @@ public class ExpressionDTO {
 		return language.getPhonology().isPhonologicallySafe(expression);
 	}
 	
-	public boolean isCorrectWord() {
+	/*public boolean isCorrectWord() {
 		return language.getVocabulary().isCorrectWord(expression);
-	}
+	}*/
 }

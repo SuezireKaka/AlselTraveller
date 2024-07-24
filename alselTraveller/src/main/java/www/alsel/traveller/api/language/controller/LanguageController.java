@@ -19,8 +19,8 @@ public class LanguageController {
 	@Autowired
 	private LanguageService languageService;
 	
-	// /language/anonymous
-	@GetMapping(ApiCommand.ANONYMOUS)
+	// /language/anonymous/listAll
+	@GetMapping(ApiCommand.ANONYMOUS + ApiCommand.LIST_ALL)
 	public ResponseEntity<List<LanguageVO>> listAllLanguages() {
 		List<LanguageVO> result = languageService.listAllLanguages();
 		return new ResponseEntity<>(result, HttpStatus.OK);

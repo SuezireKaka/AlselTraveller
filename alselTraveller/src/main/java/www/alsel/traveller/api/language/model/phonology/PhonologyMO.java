@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class PhonologyVO {
-	private List<PhonemeVO> phonology = new ArrayList<>();
+public class PhonologyMO {
+	private List<PhonemeVO> phonemeList = new ArrayList<>();
 	
 	public boolean isPhonologicallySafe(String expression) {
 		return false;
