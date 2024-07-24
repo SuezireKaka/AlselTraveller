@@ -10,10 +10,10 @@
 		<result property="intro" column="intro" />
 		<association property="phonology" columnPrefix="phon_"
 			resultMap="rmPhonologyMO"/>
-		<association property="vocabulary" columnPrefix="voc_"
+		<!--<association property="vocabulary" columnPrefix="voc_"
 			resultMap="rmVocabularyMO"/>
 		<association property="grammar" columnPrefix="gram_"
-			resultMap="rmGrammarMO"/>
+			resultMap="rmGrammarMO"/>-->
 	</resultMap>
 	
 	<resultMap id="rmPhonologyMO"
@@ -21,6 +21,22 @@
 		<collection property="phonemeList" columnPrefix="me_"
 			resultMap="rmPhonemeVO">
 		</collection>
+	</resultMap>
+	
+	<resultMap id="rmPhonemeVO" extends="nsEntity.rmEntity"
+			type="www.alsel.traveller.api.language.model.phonology.PhonemeVO">
+		<result property="ipa" column="ipa" />
+		<result property="romanExpression" column="roman" />
+		<result property="fontExpression" column="font" />
+		<collection property="phonemeList" columnPrefix="prop_"
+			resultMap="rmPhonologicalPropertyVO">
+		</collection>
+	</resultMap>
+	
+	<resultMap id="rmPhonologicalPropertyVO" extends="nsEntity.rmEntity"
+			type="www.alsel.traveller.api.language.model.phonology.PhonologicalPropertyVO">
+		<result property="contraction" column="contr" />
+		<result property="expression" column="expr" />
 	</resultMap>
 	
 	
