@@ -7,18 +7,17 @@
 	<resultMap id="SpeciesVO" extends="nsEntity.rmEntity"
 			type="www.alsel.traveller.api.language.model.LanguageVO">
 		<result property="name" column="name" />
-		<result property="intro" column="intro" />
+		<result property="gender" column="gendere" />
 		<association property="phonology" columnPrefix="phon_"
 			resultMap="rmPhonologyMO"/>
 		<association property="vocabulary" columnPrefix="voca_"
 			resultMap="rmVocabularyMO"/>
 		<association property="grammar" columnPrefix="gram_"
 			resultMap="rmGrammarMO"/>
-	</resultMap>	
+	</resultMap>
 	
-	<!-- 	public List<LanguageVO> listAllLanguages(); -->
-	<select id="listAllLanguages" resultMap="rmLanguageVO">
-		select l.*
-			from t_language l
+	<!-- 	public List<CharacterVO> listAllCharacters(); -->
+	<select id="listAllCharacters" resultMap="rmCharacterVO">
+		
 	</select>
 </mapper>
