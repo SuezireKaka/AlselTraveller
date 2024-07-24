@@ -19,8 +19,8 @@ public class CharacterController {
 	@Autowired
 	private CharacterService kittogishService;
 	
-	// /character/anonymous
-	@GetMapping(ApiCommand.ANONYMOUS)
+	// /character/anonymous/listAll
+	@GetMapping(ApiCommand.ANONYMOUS + ApiCommand.LIST_ALL)
 	public ResponseEntity<List<CharacterVO>> listAllCharacters() {
 		List<CharacterVO> result = kittogishService.listAllCharacters();
 		return new ResponseEntity<>(result, HttpStatus.OK);

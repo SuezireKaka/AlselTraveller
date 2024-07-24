@@ -3,21 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="www.alsel.traveller.api.language.mapper.LanguageMapper">
-	<resultMap id="SpeciesVO" extends="nsEntity.rmEntity"
-			type="www.alsel.traveller.api.language.model.LanguageVO">
+<mapper namespace="www.alsel.traveller.api.character.mapper.CharacterMapper">
+	<resultMap id="rmCharacterVO" extends="nsEntity.rmEntity"
+			type="www.alsel.traveller.api.character.model.CharacterVO">
 		<result property="name" column="name" />
-		<result property="gender" column="gendere" />
-		<association property="phonology" columnPrefix="phon_"
-			resultMap="rmPhonologyMO"/>
-		<association property="vocabulary" columnPrefix="voca_"
-			resultMap="rmVocabularyMO"/>
-		<association property="grammar" columnPrefix="gram_"
-			resultMap="rmGrammarMO"/>
+		<result property="gender" column="gender" />
+		<result property="introduce" column="intro" />
+		<collection property="speciesList" columnPrefix="spc_"
+			resultMap="rmSpeciesVO">
+		</collection>
+	</resultMap>
+	
+	<resultMap id="rmSpeciesVO" extends="nsEntity.rmEntity"
+			type="www.alsel.traveller.api.character.model.SpeciesVO">
+		<result property="name" column="name" />
+		<result property="introduce" column="intro" />
 	</resultMap>
 	
 	<!-- 	public List<CharacterVO> listAllCharacters(); -->
 	<select id="listAllCharacters" resultMap="rmCharacterVO">
-		
+		select c.*
+			from t_character c
 	</select>
 </mapper>

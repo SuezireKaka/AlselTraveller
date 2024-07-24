@@ -4,16 +4,14 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import www.alsel.traveller.api.framework.model.TimeEntity;
+import www.alsel.traveller.api.framework.model.Entity;
 
 @Getter
 @NoArgsConstructor
-public class CharacterVO extends TimeEntity {
+public class CharacterVO extends Entity {
 	public String name;
 	public String gender;
-
-	public List<SpeciesVO> spices;
-	public List<EducatedSpecVO> eduSpecList;
-	
 	public String introduce;
+
+	public List<SpeciesVO> speciesList;
 }
